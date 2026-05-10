@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
     :root {
       --ink: #0a0a0a;
       --paper: #f5f0e8;
@@ -16,7 +16,7 @@
       --muted: #6b6258;
       --border: #2a2420;
     }
- 
+
     html, body {
       min-height: 100vh;
       background: var(--ink);
@@ -24,7 +24,7 @@
       font-family: 'Cormorant Garamond', Georgia, serif;
       overflow-x: hidden;
     }
- 
+
     /* Noise texture overlay */
     body::before {
       content: '';
@@ -35,7 +35,7 @@
       pointer-events: none;
       z-index: 0;
     }
- 
+
     /* Vignette */
     body::after {
       content: '';
@@ -45,7 +45,7 @@
       pointer-events: none;
       z-index: 0;
     }
- 
+
     /* Horizontal ruled lines background */
     .bg-lines {
       position: fixed;
@@ -66,7 +66,7 @@
         rgba(245,240,232,0.04) 40px
       );
     }
- 
+
     /* Side ornaments */
     .side-ornament {
       position: fixed;
@@ -95,7 +95,7 @@
       font-style: italic;
       font-weight: 300;
     }
- 
+
     /* Corner marks */
     .corner {
       position: fixed;
@@ -110,7 +110,7 @@
     .corner.tr { top: 20px; right: 20px; transform: scaleX(-1); }
     .corner.bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
     .corner.br { bottom: 20px; right: 20px; transform: scale(-1); }
- 
+
     /* Main layout */
     .page {
       position: relative;
@@ -121,19 +121,19 @@
       justify-content: center;
       padding: 60px 20px;
     }
- 
+
     .container {
       width: 100%;
       max-width: 480px;
       text-align: center;
     }
- 
+
     /* Header */
     .header {
       margin-bottom: 64px;
       animation: fadeDown 1s ease both;
     }
- 
+
     .eyebrow {
       font-size: 11px;
       letter-spacing: 6px;
@@ -144,7 +144,7 @@
       opacity: 0;
       animation: fadeIn 1s ease 0.3s both;
     }
- 
+
     .name {
       font-family: 'IM Fell English', Georgia, serif;
       font-size: clamp(52px, 12vw, 82px);
@@ -154,7 +154,7 @@
       color: var(--paper);
       position: relative;
     }
- 
+
     .name .first {
       display: block;
       font-style: italic;
@@ -172,7 +172,7 @@
       opacity: 0;
       animation: fadeDown 0.9s ease 0.25s both;
     }
- 
+
     .divider {
       display: flex;
       align-items: center;
@@ -195,14 +195,14 @@
       color: var(--accent);
       font-size: 14px;
     }
- 
+
     /* Links */
     .links {
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
- 
+
     .link-item {
       opacity: 0;
       animation: fadeUp 0.8s ease both;
@@ -210,7 +210,7 @@
     .link-item:nth-child(1) { animation-delay: 0.5s; }
     .link-item:nth-child(2) { animation-delay: 0.65s; }
     .link-item:nth-child(3) { animation-delay: 0.8s; }
- 
+
     .link-btn {
       display: flex;
       align-items: center;
@@ -224,7 +224,7 @@
       background: rgba(245,240,232,0.02);
       cursor: pointer;
     }
- 
+
     .link-btn::before {
       content: '';
       position: absolute;
@@ -234,20 +234,20 @@
       transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
       z-index: 0;
     }
- 
+
     .link-btn:hover::before {
       transform: translateX(0);
     }
- 
+
     .link-btn:hover {
       color: var(--ink);
       border-color: var(--paper);
     }
- 
+
     .link-btn:hover .link-icon svg { fill: var(--ink); }
     .link-btn:hover .link-number { color: var(--muted); }
     .link-btn:hover .link-arrow { opacity: 1; transform: translateX(0); }
- 
+
     .link-number {
       font-size: 10px;
       letter-spacing: 2px;
@@ -260,7 +260,7 @@
       transition: color 0.4s;
       font-family: 'Cormorant Garamond', serif;
     }
- 
+
     .link-icon {
       width: 18px;
       height: 18px;
@@ -275,7 +275,7 @@
       fill: var(--paper);
       transition: fill 0.4s;
     }
- 
+
     .link-label {
       flex: 1;
       text-align: left;
@@ -287,7 +287,7 @@
       position: relative;
       z-index: 1;
     }
- 
+
     .link-sublabel {
       font-size: 11px;
       letter-spacing: 1px;
@@ -302,7 +302,7 @@
       transition: color 0.4s;
     }
     .link-btn:hover .link-sublabel { color: rgba(10,10,10,0.5); }
- 
+
     .link-arrow {
       position: relative;
       z-index: 1;
@@ -311,14 +311,14 @@
       transition: opacity 0.4s, transform 0.4s;
       font-size: 16px;
     }
- 
+
     /* Footer */
     .footer {
       margin-top: 60px;
       opacity: 0;
       animation: fadeIn 1s ease 1s both;
     }
- 
+
     .footer-line {
       display: flex;
       align-items: center;
@@ -332,14 +332,14 @@
       height: 1px;
       background: rgba(245,240,232,0.12);
     }
- 
+
     .footer-cross {
       color: var(--accent);
       font-size: 12px;
       letter-spacing: 6px;
       opacity: 0.5;
     }
- 
+
     .footer-text {
       font-size: 10px;
       letter-spacing: 4px;
@@ -347,7 +347,7 @@
       color: var(--muted);
       opacity: 0.4;
     }
- 
+
     /* Keyframes */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-20px); }
@@ -361,7 +361,7 @@
       from { opacity: 0; }
       to   { opacity: 1; }
     }
- 
+
     /* Mobile */
     @media (max-width: 600px) {
       .side-ornament { display: none; }
@@ -371,9 +371,9 @@
   </style>
 </head>
 <body>
- 
+
   <div class="bg-lines"></div>
- 
+
   <!-- Corner marks -->
   <div class="corner tl">
     <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -399,7 +399,7 @@
       <circle cx="2" cy="2" r="2" fill="#f5f0e8"/>
     </svg>
   </div>
- 
+
   <!-- Side ornaments -->
   <div class="side-ornament left">
     <div class="line"></div>
@@ -411,10 +411,10 @@
     <div class="symbol">†&nbsp;&nbsp;✦&nbsp;&nbsp;†</div>
     <div class="line"></div>
   </div>
- 
+
   <div class="page">
     <div class="container">
- 
+
       <!-- Header -->
       <header class="header">
         <p class="eyebrow">✦ &nbsp; links &nbsp; ✦</p>
@@ -425,10 +425,10 @@
           <span class="divider-symbol">✟</span>
         </div>
       </header>
- 
+
       <!-- Links -->
       <nav class="links" aria-label="Links principais">
- 
+
         <div class="link-item">
           <a href="https://www.instagram.com/caua33e" target="_blank" rel="noopener" class="link-btn">
             <span class="link-number">01</span>
@@ -442,7 +442,7 @@
             <span class="link-arrow" aria-hidden="true">→</span>
           </a>
         </div>
- 
+
         <div class="link-item">
           <a href="https://open.spotify.com/user/31ps2tf6uqrzvasus2y2zoihthie?si=f1d098590db74873" target="_blank" rel="noopener" class="link-btn">
             <span class="link-number">02</span>
@@ -456,7 +456,7 @@
             <span class="link-arrow" aria-hidden="true">→</span>
           </a>
         </div>
- 
+
         <div class="link-item">
           <a href="https://github.com/rootcaua" target="_blank" rel="noopener" class="link-btn">
             <span class="link-number">03</span>
@@ -470,19 +470,19 @@
             <span class="link-arrow" aria-hidden="true">→</span>
           </a>
         </div>
- 
+
       </nav>
- 
+
       <!-- Footer -->
       <footer class="footer">
         <div class="footer-line">
           <span class="footer-cross">✟ &nbsp; ✞ &nbsp; †</span>
         </div>
-        <p class="footer-text">mmxxv</p>
+        <p class="footer-text">© 2025 caua &nbsp;·&nbsp; todos os direitos reservados</p>
       </footer>
- 
+
     </div>
   </div>
- 
+
 </body>
 </html>
